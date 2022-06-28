@@ -1,6 +1,10 @@
 const resetPasswordFormHandler = async (event) => {
     event.preventDefault();
 
+    // TODO: Need to make sure that our reset password page includes a "email-address" element ID,
+    // TODO: this will be use to check which user needs to have their password reset. 
+    const emailAddress = document.querySelector('#email-address').value.trim();
+
     // TODO: Need to make sure our reset password page includes a "verification-code" element ID, 
     // TODO: this will be used to let the user reset their password.
     const verificationCode = document.querySelector('#verification-code').value.trim();
@@ -14,7 +18,7 @@ const resetPasswordFormHandler = async (event) => {
     const confirmPassword = document.querySelector('#confirm-password').value.trim();   
     
     // Checks that these values are not empty strings. 
-    if (verificationCode && newPassword && confirmPassword) {
+    if (emailAddress && verificationCode && newPassword && confirmPassword) {
         // Checks to see that the confirmation code is correct.
         if (verificationCode === "Brian") {
             // Checks to see if both passwords match.
@@ -23,16 +27,16 @@ const resetPasswordFormHandler = async (event) => {
                 const response = await fetch('/api/users/reset_password', {
                     method: 'POST',
                     // API body is converted to a string and passed to the API route. 
-                    body: JSON.stringify({  newPassword }),
+                    body: JSON.stringify({ emailAddress, newPassword }),
                     headers: { 'Content-Type': 'application/json' },
                 });
-                // If API request returns a valid response, we can send the user to our calendar homepage. 
+                // If API request returns a valid response, we can send the user to our sign in page. 
                 // If the API request failed we alert the user to log in again. 
                 if (response.ok) {
                     // TODO: Add link to send the user back to homepage.
                     document.location.replace('/');
                 } else {
-                    alert('Failed to log in. Try again.');
+                    alert('Failed to reset password. Try again.');
                 }
             } 
             else {

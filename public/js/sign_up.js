@@ -18,9 +18,9 @@ const signUpFormHandler = async (event) => {
     const password = document.querySelector('#password-sign-up').value.trim();
     
     // Checks that these values are not empty strings. 
-    if (email && password) {
+    if (firstName && lastName && email && password) {
         // Makes an API request to authenticate the user. 
-      const response = await fetch('/api/users/sign_in', {
+      const response = await fetch('/api/users/sign_up', {
         method: 'POST',
         // API body is converted to a string and passed to the API route. 
         body: JSON.stringify({ firstName, lastName, email, password }),

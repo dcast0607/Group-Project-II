@@ -19,6 +19,10 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        eventColor: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         // If the event exists more than 1 days, it should has start and end date.
         // TODO: Consider to separate dates as year, month and day if it's more convenient.
         startDate: {
@@ -35,7 +39,7 @@ Event.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'event',
     }
 );
 

@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+#signUp-box {
+    width: 400px;
+    height: 620px;
+    margin: auto;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+
+form {
+    width: 320px;
+    margin-left: 1.5em;
+}
+
+form label {
+    display: flex;
+    margin: 20px 0 0 0;
+    font-size: 20px;
+}
+
+form input{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border: 2px solid black;
+}
+
+input[type="button"]{
+    width: 240px;
+    height: 36px;
+    margin-top: 20px;
+    margin-left: 2.5em;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 20px
+}
+
+p{
+    text-align: center;
+}

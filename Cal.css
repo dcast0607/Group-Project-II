@@ -4,11 +4,19 @@
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
 }
+body {
+    background-image: url("./images/background-2.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
 #nav {
     justify-content: center;
-    background-color: #6fbef7 !important;
     padding: 5px;
     margin: 20px;
+    background: rgba(144, 228, 104, 0.46);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #title {
@@ -18,6 +26,7 @@
 
 #events {
     justify-content: center;
+    color: white;
 }
 
 .week {
@@ -26,18 +35,18 @@
 
 #Calendar {
     position: relative;
-    left: 37rem;
-    background-color: rgb(246, 168, 181);
     width: 45rem;
     height: 45rem;
-    margin: 4rem;
+    margin-top: 4rem;
+    background: rgba(49, 128, 152, 0.475);
+
 }
 
 .month {
     padding-top: 1rem;
     width: 100%;
     height: 6rem;
-    background-color: rgb(213, 139, 213);
+    background: rgb(74, 163, 190);
     text-align: center;
     color: white;
     font-size: 1rem;
@@ -51,6 +60,7 @@
     padding: 0 0.4rem;
     display:flex;
     align-items: center;
+    color: white;
 }
 
 #days {
@@ -58,10 +68,11 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0.2rem;
+    color: rgb(200, 94, 230);
 }
 
 #days div {
-    font-size: 1.4rem;
+    font-size: 1.4vw;
     margin: 0.3rem;
     width: calc(40.2rem/7);
     height: 5rem;
@@ -69,4 +80,65 @@
     justify-content: center;
     align-items: center;
     text-shadow: 0 0.3 rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.day-hover:hover {
+    background: rgba(49, 128, 152, 0.475);
+}
+
+#wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+#left-box {
+    width: 23rem;
+    height: 45rem;
+    margin-top: 2rem;
+    color: white;
+    background: rgba(74, 163, 190, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4rem;
+}
+
+.create-event {
+    font-size: 1rem;
+    padding-left: 4.2rem;
+    text-shadow: 0 0 3px #d1fc14da, 0 0 5px #09ff00;
+}
+
+.upcoming-events {
+    font-size: 1rem;
+    padding-left: 2rem;
+    text-shadow: 0 0 3px #d1fc14da, 0 0 5px #09ff00;
+}
+
+#right-box {
+    width: 23rem;
+    height: 45rem;
+    margin-top: 2rem;
+    color: white;
+    background: rgba(74, 163, 190, 0.5);
+    border-radius: 4rem;
+}
+
+textarea {
+    background: rgba(74, 163, 190, 0.5);
+    border: none;
+    resize: none;
+    padding: 1rem;
+    color: white;
+}
+
+.submit {
+    padding-right: 2rem;
+    background: rgba(144, 228, 104, 0.46);
+    background-image: linear-gradient(315deg, #f5d020 0%, #c3f353 74%);
+    border-radius: .3rem;
+}
+/* if width <= 1425px then anything smaller than 1425px will activate this */
+@media screen and (max-width: 1425px) {
+    #wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
 }

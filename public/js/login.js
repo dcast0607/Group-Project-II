@@ -30,6 +30,6 @@ const loginFormHandler = async (event) => {
   // TODO: Add query selectors to accept the sign in request. 
   // TODO: Verify that our HTML homepage has a "login-form" class. 
   document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
   

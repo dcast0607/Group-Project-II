@@ -114,11 +114,11 @@
 
 const express = require('express');
 const router = express.Router();
-const path = require ('path');
-const bodyParser = require ('body-parser');
-const login = require('../../public/js/login');
-const signUp = require('../../public/js/sign_up');
-const resetPassword = require('../../public/js/reset_password');
+// const path = require ('path');
+// const bodyParser = require ('body-parser');
+// const login = require('../../public/js/login');
+// const signUp = require('../../public/js/sign_up');
+// const resetPassword = require('../../public/js/reset_password');
 
 // TODO: Need to define the following routes.
 // TODO: Add a route that lets the user submit authentication credentials [ Email and Password ]

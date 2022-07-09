@@ -52,6 +52,7 @@ body {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    align-items: center;
 }
 
 #weekdays {
@@ -68,7 +69,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 0.2rem;
-    color: rgb(200, 94, 230);
+    color: rgb(182, 232, 117);
 }
 
 #days div {
@@ -132,9 +133,50 @@ textarea {
 .submit {
     padding-right: 2rem;
     background: rgba(144, 228, 104, 0.46);
-    background-image: linear-gradient(315deg, #f5d020 0%, #c3f353 74%);
+    background-image: linear-gradient(315deg, #739b75 0%, #a0d22c 74%);
     border-radius: .3rem;
 }
+
+.card1 {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+.card2 {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+.card3 {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+.card-body1 {
+    height: 8rem;
+    background: rgba(144, 228, 104, 0.46);
+}
+.card-body2 {
+    height: 8rem;
+    background: rgba(144, 228, 104, 0.46);
+}
+.card-body3 {
+    height: 8rem;
+    background: rgba(144, 228, 104, 0.46);
+}
+
+.month i {
+    position: absolute;
+    right: 42rem;
+    top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.month i.next {
+    position: absolute;
+    left: 42rem;
+    top: 2rem;
+}
+
 /* if width <= 1425px then anything smaller than 1425px will activate this */
 @media screen and (max-width: 1425px) {
     #wrapper {

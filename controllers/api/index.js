@@ -5,5 +5,6 @@ const displayRoutes = require('./displayRoutes');
 
 router.use('/users', userRoutes);
 router.use('/display', displayRoutes);
+router.user('/events', eventRoutes);
 
 module.exports = router;

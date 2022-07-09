@@ -1,7 +1,7 @@
 // const express = require ('express')
 // const path = require ('path')
 // const bodyParser = require ('body-parser')
-// const router = require ('express').Router()
+// 
 // const signUp = require('../public/js/sign_up')
 
 // //middleware to decode the body
@@ -114,5 +114,20 @@
 
 const express = require('express');
 const router = express.Router();
+const path = require ('path');
+const bodyParser = require ('body-parser');
+const login = require('../../public/js/login');
+const signUp = require('../../public/js/sign_up');
+const resetPassword = require('../../public/js/reset_password');
+
+// TODO: Need to define the following routes.
+// TODO: Add a route that lets the user submit authentication credentials [ Email and Password ]
+    // TODO: these credentials should so the user their own calendar. 
+
+// TODO: Add a route that lets the user sign up for an account of their own. [ First Name, Last Name, Email Address, Password ]
+    // TODO: this route should create a user on our database. 
+    
+// TODO: Add a route that lets the user reset their password, the user should be able to enter the following to reset their password
+    // TODO: a reset token and the password they would like to use moving forward. 
 
 module.exports = router;

@@ -1,3 +1,28 @@
+// const express = require ('express')
+// const path = require ('path')
+// const bodyParser = require ('body-parser')
+// const router = require ('express').Router()
+// const signUp = require('../public/js/sign_up')
+
+// //middleware to decode the body
+// const app = express()
+// app.use('/', express.static(path.join(_dirname, 'static')))
+// app.use(bodyParser.json())
+
+// app.post('/api/users/sign_up', async(req, res) => {
+//     console.log(req.body)
+//     res.json({ status: 'ok'})
+// })
+// //router.get('/', async (req, res) => {
+//     //const signUpData = await signUp.findAll()
+//     //return res.json(signUpData);
+// //});
+
+
+
+
+// ----------------------------------------------------------------
+
 // const router = require('express').Router();
 // const { Event, User, UserSetting } = require('../models');
 // const withAuth = require('.../utils/auth');
@@ -86,3 +111,8 @@
 // });
 
 // module.exports = router;
+
+const express = require('express');
+const router = express.Router();
+
+module.exports = router;

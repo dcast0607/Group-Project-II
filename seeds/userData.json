@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Daniel",
+        "lastName": "Castro",
+        "email": "dcastrotest@tester.com",
+        "password": "password"
+    },
+    {
+        "firstName": "Francisco",
+        "lastName": "Rivas",
+        "email": "frivas@tester.com",
+        "password": "password123"
+    },
+    {
+        "firstName": "Shogoofa",
+        "lastName": "Akbari",
+        "email": "ashogoofa@tester.com",
+        "password": "password1234"
+    },
+    {
+        "firstName": "Tracy",
+        "lastName": "Derraco",
+        "email": "tderraco@tester.com",
+        "password": "password12345"
+    },
+    {
+        "firstName": "Heng",
+        "lastName": "Yu",
+        "email": "hyu@tester.com",
+        "password": "password123456"
+    }
+]

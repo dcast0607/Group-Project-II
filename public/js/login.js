@@ -26,10 +26,18 @@ const loginFormHandler = async (event) => {
       }
     }
   };
+
+  const resetPasswordRedirectHandler = async (event) => {
+    event.preventDefault();
+    console.log('Sending user back to the reset password page.');
+    document.location.replace("/reset_password");
+  };
   
   // TODO: Add query selectors to accept the sign in request. 
   // TODO: Verify that our HTML homepage has a "login-form" class. 
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-  
+  document
+  .querySelector('#resetPasswordLogin-button')
+  .addEventListener('click', resetPasswordRedirectHandler);

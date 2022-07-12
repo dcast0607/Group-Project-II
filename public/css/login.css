@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background-image: url("/images/background-2.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 40rem;
+    height: 42rem;
+    background: rgba(49, 128, 152, 0.475);
+    color: white;
+    margin: auto;
+    border-radius: 4rem;
+    margin-top: 8rem;
+    padding-top: 10rem;
+    font-size: 1.4rem;
+}
+
+textarea {
+    background: rgba(74, 163, 190, 0.5);
+    border: none;
+    resize: none;
+    padding: 1rem;
+    color: white;
+}
+
+input {
+    padding: .4rem;
+    margin: .5rem;
+}
+
+.sign-in-up {
+    background: rgba(49, 128, 152, 0.475);
+    width: 28rem;
+    height: 8rem;
+    border-radius: 4rem;
+    margin: 6rem;
+    
+}
+.button {
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 3rem 4rem;
+    cursor: pointer;
+  }

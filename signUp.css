@@ -33,15 +33,13 @@ form input{
     border: 2px solid black;
 }
 
-input[type="button"]{
-    width: 240px;
-    height: 36px;
-    margin-top: 20px;
-    margin-left: 2.5em;
-    border: none;
+.signUp-btn{
+    cursor: pointer;
+    margin: 20px;
+    padding: 10px 10px;
     background-color: black;
     color: white;
-    font-size: 20px
+
 }
 
 p{

@@ -9,6 +9,7 @@ body {
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
    }
 
 #nav {
@@ -24,11 +25,17 @@ body {
     color: white;
 }
 
-#events {
+.row {
     justify-content: center;
-    color: white;
 }
 
+div.card {
+    margin: 1rem;
+    border-style: solid;
+    border-color: rgba(2, 223, 2, 0.799);
+    background: transparent;
+    color: white;
+}
 .week {
     margin: 18px;
 }
@@ -150,15 +157,15 @@ textarea {
     padding-right: 1rem;
 }
 
-.card-body1 {
+.card-body4 {
     height: 8rem;
     background: rgba(144, 228, 104, 0.46);
 }
-.card-body2 {
+.card-body5 {
     height: 8rem;
     background: rgba(144, 228, 104, 0.46);
 }
-.card-body3 {
+.card-body6 {
     height: 8rem;
     background: rgba(144, 228, 104, 0.46);
 }

@@ -148,7 +148,8 @@ router.post('/sign_in', async (req, res) => {
       });
   
     } catch (err) {
-      res.status(400).json(err);
+        console.log(req.body);
+        res.status(400).json(err);
     }
 });
 

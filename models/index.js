@@ -11,6 +11,8 @@ Which are added into UserSetting and Event classes.
 And create UserSetting just in case that we need more settings depended on user.
 */
 const Event = require('./Event');
+
+//const Preference = require('./Preference');
 const User = require('./User');
 const UserSetting = require('./UserSetting');
 

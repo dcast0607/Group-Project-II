@@ -36,10 +36,20 @@ const signUpFormHandler = async (event) => {
       }
     }
   };
+
+const returnToHomepageHandler = async (event) => {
+  event.preventDefault();
+  console.log("Sending the user back to the homepage.");
+  document.location.replace('/homepage');
+  };
   
   // TODO: Add query selectors to accept the sign up request. 
   // TODO: Verify that our sign up page has a "sign-up-form" class. 
   document
-    .querySelector('.sign-up-form')
+    .querySelector('.signup-form')
     .addEventListener('submit', signUpFormHandler);
+
+  document
+    .querySelector('#homePage-button')
+    .addEventListener('click', returnToHomepageHandler);
   

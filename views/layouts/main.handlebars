@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/Cal.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    
+    <title>Carpe Diem</title>
+</head>
+<header class="container">
+    <nav class="navbar navbar-light" id="nav">
+        <div class="navbar-brand" id="title">Welcome to the Carpe Diem calendar app!</div>
+    </nav>
+</header>
+
+<body>
+
+
+
+
+    {{{ body }}}
+    {{!-- <!--This option checks to see if the user is already logged in. -->
+    {{#if logged_in}}
+        <a href="/calendar">Calendar Page</a>
+        <button class='no-button' id="logout">Logout</button>
+
+    {{else}}
+        <a href="/homepage">Homepage</a>
+    {{/if}}
+    <!--This option checks to see if the user is already logged in. -->
+
+    <!--Scripts section, depending on whether the user is logged in or not
+        we will display different scripts.-->
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    <script src="/js/index.js"></script>
+    {{else}}
+    <script src="/js/login.js"></script>
+    <script src="/js/reset_password.js"></script>
+    <script src="/js/sign_up.js"></script>
+    {{/if}} --}}
+</body>
+
+
+</html>

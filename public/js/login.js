@@ -20,6 +20,7 @@ const loginFormHandler = async (event) => {
       // If the API request failed we alert the user to log in again. 
       if (response.ok) {
         // TODO: Need to add link to calendar here.
+        console.log("success");
         document.location.replace('/');
       } else {
         alert('Failed to log in. Try again.');

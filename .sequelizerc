@@ -1,4 +1,4 @@
 const path = require('path')
 module.exports = {
-  config: path.resolve('./database/config', 'config.js'),
+  config: path.resolve('./config', 'config.js'),
 }

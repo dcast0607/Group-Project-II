@@ -5,12 +5,17 @@ const path = require('path');
 
 // Declares the header that we will be using for our API requests. 
 router.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Headers",
-    "x-access-token, Origin, Content-Type, Accept"
-  );
-  next();
-});
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept",
+    );
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST, DELETE, PUT"
+    );
+    next();
+  });
 
 // Generic route, may need to get rid of this and use the homepage route instead. 
 // TODO: We are going to need to incorporate handlebars, route destination will need to change. 

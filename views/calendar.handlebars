@@ -17,14 +17,16 @@
     <div id="wrapper">
         <main id="left-box">
             <section class="create-event">
+            <form class="form addEvent-form">
                 <h1>Create Event</h1>
                 <p>What is the name of your Event?</p>
-                <textarea></textarea>
+                <input class="form-input" type="text" id="eventTitle"/>
                 <p>Please give some information regarding this event.</p>
-                <textarea></textarea>
+                <input class="form-input" type="text" id="eventDetails"/>
                 <p>What day would you like to set the event for?</p>
-                <input type="date"/>
+                <input type="date" id="eventDate"/>
                 <button class="submit">Submit</button>
+            </form>
             </section>
         </main>
         <main id="Calendar">
@@ -107,3 +109,4 @@
         </main>
     </div>
 </body>
+<script src="/js/calendar.js"></script>

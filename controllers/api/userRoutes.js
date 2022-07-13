@@ -1,123 +1,22 @@
-// const express = require ('express')
-// const path = require ('path')
-// const bodyParser = require ('body-parser')
-// 
-// const signUp = require('../public/js/sign_up')
-
-// //middleware to decode the body
-// const app = express()
-// app.use('/', express.static(path.join(_dirname, 'static')))
-// app.use(bodyParser.json())
-
-// app.post('/api/users/sign_up', async(req, res) => {
-//     console.log(req.body)
-//     res.json({ status: 'ok'})
-// })
-// //router.get('/', async (req, res) => {
-//     //const signUpData = await signUp.findAll()
-//     //return res.json(signUpData);
-// //});
-
-
-
-
-// ----------------------------------------------------------------
-
-// const router = require('express').Router();
-// const { Event, User, UserSetting } = require('../models');
-// const withAuth = require('.../utils/auth');
-// //get all user settings and JOIN with user data
-// router.get('/', async (req, res) => {
-//     try {
-//         const userData = await User.findAll({
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: ['id','firstname', 'lastname', 'email' ],
-
-//                 },
-//             ]
-//         });
-// //Serialize data for template
-//         const users = userData.map((user) => user.get({ plain:true}));
-// //Pass serialized data into template
-//         res.render('homepage', {
-//             User,
-//             logged_in: req.session.logged_in
-//         });
-        
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// router.get('/User', async (req, res) => {
-//     try {
-//         const userData = await User.findByPk(req.params.id, {
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: [
-//                         'id',
-//                         'firstname',
-//                         'lastname',
-//                         'email'
-//                     ]
-                
-//                 },
-//             ],
-//         });
-//   const users = userData.get({plain: true });
-  
-//   req.render('User', {
-//     ...users,
-//     logged_in: req.session.logged_in
-//   });
-// }catch (err) {
-//     res.status(500).json(err);
-// }
-// });
-
-
-    
-
-
-// router.get('/User', withAuth, async (req, res) => {
-//     try {
-//         const userData = await User.findByPk(req.session.user_id, {
-//             attributes: {exclude: ['password']},
-//             include: [{model: User}],
-//         });
-
-//         const user = userData.get({ plain: true });
-
-//         res.render('profile', {
-//             ...user,
-//             logged_in: true
-//         });
-//     }catch (err) {
-//         res.status(500).json(err);
-//     }
-    
-// });
-
-// router.get('/login', (req, res) => {
-//     if (req.session.logged_in) {
-//         res.redirect('/User');
-//         return;
-//     }
-
-//     res.render('login');
-// });
-
-// module.exports = router;
-
 const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
-const path = require ('path');
-const bodyParser = require ('body-parser');
+const bcrypt = require('bcrypt');
+const UserSetting = require('../../models/UserSetting');
+const { request } = require('express');
 
+router.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept",
+    );
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST, DELETE, PUT"
+    );
+    next();
+  });
 
 // TODO: Add a route that lets the user submit authentication credentials [ Email and Password ]
 router.post('/sign_in', async (req, res) => {
@@ -140,13 +39,12 @@ router.post('/sign_in', async (req, res) => {
         return;
       }
   
-      req.session.save(() => {
+        req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        
+
         res.json({ user: userData, message: 'You are now logged in!' });
       });
-  
     } catch (err) {
         console.log(req.body);
         res.status(400).json(err);
@@ -169,12 +67,12 @@ router.post('/logout', (req, res) => {
 router.post('/sign_up', async (req, res) => {
     try {
       const userData = await User.create(req.body);
-  
+        console.log(req.body);
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
   
-        res.status(200).json(userData);
+        res.status(200).json({ user: userData, message: 'Account created!' });
       });
     } catch (err) {
       res.status(400).json(err);
@@ -183,7 +81,51 @@ router.post('/sign_up', async (req, res) => {
 
 // TODO: Need to define the following routes.
 
+router.put('/reset_password', async (req, res) => {
+    try {
+        const userData = await User.findOne({ where: { email: req.body.email } });
+    
+        if (!userData) {
+          res
+            .status(400)
+            .json({ message: 'That email does not exist in our records.' });
+          return;
+        };
 
+        hashedPassword = await bcrypt.hash(req.body.password, 10);
+        console.log(hashedPassword);
+
+        User.update(
+            {
+              // All the fields you can update and the data attached to the request body.
+              password: hashedPassword,
+            },
+            {
+              // Gets the books based on the isbn given in the request parameters
+              where: {
+                email: req.body.email,
+              },
+            }
+          )
+
+        req.session.save(() => {
+          req.session.user_id = userData.id;
+          req.session.logged_in = true;
+          
+          res.json({ user: userData, message: 'You are now logged in!' });
+        });
+    
+      } catch (err) {
+          console.log(req.body);
+          res.status(400).json(err);
+      }
+})
+
+
+// TODO: Add a catch route. This will be used to remind the user to use a valid route.
+router.post('*', async (req, res) => {
+    res.status(404).json("Whoops, please make sure you use a valid route.");
+})
     
 // TODO: Add a route that lets the user reset their password, the user should be able to enter the following to reset their password
     // TODO: a reset token and the password they would like to use moving forward. 

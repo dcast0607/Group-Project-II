@@ -11,6 +11,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow-x: hidden;
+    height: 87.3vh;
+    background-position: center;
 }
 
 .container {
@@ -23,6 +25,26 @@ body {
     border-radius: 4rem;
     margin-top: 8rem;
     padding-top: 10rem;
+    font-size: 1.4rem;
+}
+
+.container2 {
+    text-align: center;
+    width: 40rem;
+    height: 42rem;
+    color: white;
+    margin: auto;
+    margin-top: 8rem;
+    font-size: 1.4rem;
+}
+
+.container3 {
+    text-align: center;
+    width: 40rem;
+    height: 42rem;
+    color: white;
+    margin: auto;
+    margin-top: 8rem;
     font-size: 1.4rem;
 }
 

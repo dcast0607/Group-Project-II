@@ -5,7 +5,7 @@ class Event extends Model {}
 
 Event.init(
     {
-        id: {
+        eventId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -25,13 +25,17 @@ Event.init(
         },
         // If the event exists more than 1 days, it should has start and end date.
         // TODO: Consider to separate dates as year, month and day if it's more convenient.
-        startDate: {
+        eventDate: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        endDate: {
-            type: DataTypes.STRING,
-            allowNull: false,
+
+        userId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
         },
     },
     {

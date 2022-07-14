@@ -1,0 +1,43 @@
+[
+    {
+      "eventId": "1",
+      "title": "Daniel's Test Event",
+      "detail": "This is a test event",
+      "eventColor": "black",
+      "eventDate": "2022-06-07",
+      "user_id": "1"
+    },
+    {
+        "eventId": "2",
+        "title": "Daniel's Test Event2",
+        "detail": "This is a test event2",
+        "eventColor": "black",
+        "eventDate": "2022-06-08",
+        "user_id": "1"
+      },    
+      {
+        "eventId": "3",
+        "title": "Daniel's Test Event3",
+        "detail": "This is a test event3",
+        "eventColor": "black",
+        "eventDate": "2022-06-09",
+        "user_id": "1"
+      },
+      {
+        "eventId": "4",
+        "title": "Daniel's Test Event4",
+        "detail": "This is a test event4",
+        "eventColor": "black",
+        "eventDate": "2022-06-10",
+        "user_id": "1"
+      },
+      {
+        "eventId": "5",
+        "title": "Other Test Event",
+        "detail": "This is another test event",
+        "eventColor": "black",
+        "eventDate": "2022-06-07",
+        "user_id": "2"
+      }
+  ]
+  

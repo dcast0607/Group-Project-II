@@ -5,7 +5,7 @@
       "detail": "This is a test event",
       "eventColor": "black",
       "eventDate": "2022-06-07",
-      "userId": "1"
+      "user_id": "1"
     },
     {
         "eventId": "2",
@@ -13,7 +13,7 @@
         "detail": "This is a test event2",
         "eventColor": "black",
         "eventDate": "2022-06-08",
-        "userId": "1"
+        "user_id": "1"
       },    
       {
         "eventId": "3",
@@ -21,7 +21,7 @@
         "detail": "This is a test event3",
         "eventColor": "black",
         "eventDate": "2022-06-09",
-        "userId": "1"
+        "user_id": "1"
       },
       {
         "eventId": "4",
@@ -29,7 +29,7 @@
         "detail": "This is a test event4",
         "eventColor": "black",
         "eventDate": "2022-06-10",
-        "userId": "1"
+        "user_id": "1"
       },
       {
         "eventId": "5",
@@ -37,7 +37,7 @@
         "detail": "This is another test event",
         "eventColor": "black",
         "eventDate": "2022-06-07",
-        "userId": "2"
+        "user_id": "2"
       }
   ]
   

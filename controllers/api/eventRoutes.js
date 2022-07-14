@@ -1,4 +1,5 @@
 const express = require('express');
+const { request } = require('http');
 const router = express.Router();
 const path = require('path');
 const { Event } = require('../../models');
@@ -24,6 +25,7 @@ router.post('/user_data', async (req, res) => {
     try {
         const userEventData = await Event.findAll({ where: { userId: req.body.userId } });
         console.log(req.body);
+
         res.status(200).json(userEventData);
     } catch(err) {
         res.status(400).json(err);
@@ -37,10 +39,27 @@ router.post('/add_event', async (req, res) => {
     try {
         const eventData = await Event.create(req.body);
         console.log(req.body);
-        res.status(200).json(eventData);
+        res.status(200).json({ event: eventData, message: 'Event added successfully' });
     } catch(err) {
         res.status(400).json(err);
     }
+});
+
+router.delete('/delete_event/:id', async (req, res) => {
+    try {
+        const eventData = await Event.destroy({
+            where: {
+                eventId: req.params.id,
+            },
+        });
+        if (!eventData) {
+            res.status(404).json({ error: 'No event found' });
+            return;
+        }
+        res.status(200).json(eventData);
+        } catch(err) {
+            res.status(500).json(err);
+        }
 });
     
 // TODO: Add a route that lets a user delete a saved event. The user should be able to click on an icon and delete the event. 

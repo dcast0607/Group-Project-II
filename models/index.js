@@ -16,6 +16,8 @@ const Event = require('./Event');
 const User = require('./User');
 const UserSetting = require('./UserSetting');
 
+
+
 // Users could have many events.
 User.hasMany(Event, {
     foreignKey: 'user_id',

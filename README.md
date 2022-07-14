@@ -24,8 +24,6 @@ Users will be able to plan out their day using our application. Users can create
 
 * [Contributors](#contributors)
 
-* [Test](#test)
-
 * [Questions](#questions)
 
 # Installation

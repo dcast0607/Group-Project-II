@@ -172,7 +172,7 @@ The reset password page allows the user to reset their credentials. This page wi
 ### Main Calendar Page [In Progress]
 Unfortunately, this page is currently a work in progress. The goal here is to update this page so that we can populate our calendar with event data that the user has entered. When this page loads, we use the "userId" that we have stored to local storage and pull all event data for the respective user. This page is used to expose the "events" routes to the end user. 
 
-![Alt text](./images/Project%202%20Homepage.png "Homepage") </br>
+![Alt text](./images/Project%202%20Main%20Calendar%20Page.png "Homepage") </br>
 
 # App Demo
 ![Alt text](./images/CarpeDiemCalendar.gif "Carpe Diem Demo") </br>
@@ -180,7 +180,7 @@ Unfortunately, this page is currently a work in progress. The goal here is to up
 
 # Database
 #### JAWS DB Hosted Users Table
-![Alt text](./images/Database%20User%20Table%20-%20Heroku.png "JAWS DB Hosted Users Table") </br>
+![Alt text](./images/Database%20User%20Table%20-%20JAWSDB.png "JAWS DB Hosted Users Table") </br>
 
 ### JAWS DB Hosted Events Table
 ![Alt text](./images/Database%20Events%20Table%20-%20Heroku.png "JAWS DB Hosted Events Table") </br>
